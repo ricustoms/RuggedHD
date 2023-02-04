@@ -5,6 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
       <script src="https://kit.fontawesome.com/f7979059e7.js" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
       
       
       
@@ -32,83 +33,70 @@
     <!--END_NAV-->
     <div class="div1">
       <h1 class="hintro">Rugged HD is Specialized in Heavy Duty Diesel Repair</h1>
-        <div class="slideshow-container" style="margin-top: 8px;">
-
-          <div class="mySlides fade">
-            <div class="numbertext">1 / 5</div>
-            <img src="img/eng1.png" style="width: 100%" alt="Picture of Engine">
-            <!-- <div class="text">Caption Text</div> -->
-          </div>
-          
-          <div class="mySlides fade">
-            <div class="numbertext" >2 / 5</div>
-            <img src="img/worker1.png" style="width:100%" alt="Picture of a mechanic working on a big truck">
-            <!-- <div class="text">Caption Two</div> -->
-          </div>
-          
-          <div class="mySlides fade">
-            <div class="numbertext" >3 / 5</div>
-            <img src="img/truck2.png" style="width:100%" alt="Picture of a big blue truck">
-            <!-- <div class="text">Caption Three</div> -->
-          </div>
-
-          <div class="mySlides fade">
-            <div class="numbertext" >4 / 5</div>
-            <img src="img/tool1.png" style="width:100%" alt="Picture of a mechanic tool set">
-            <!-- <div class="text">Caption Three</div> -->
-          </div>
-
-          <div class="mySlides fade">
-            <div class="numbertext" >5 / 5</div>
-            <img src="img/tractor.png" style="width:100%" alt="Yellow tractor">
-            <!-- <div class="text">Caption Three</div> -->
-          </div>
-          
-          <a class="prev" onclick="plusSlides(-1)">❮</a>
-          <a class="next" onclick="plusSlides(1)">❯</a>
+      
+      <div class="container">
+        <!-- Slider main container -->
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide"><img src="img/eng1.png"   alt=""></div>
+                <div class="swiper-slide"><img src="img/worker1.png" alt=""></div>
+                <div class="swiper-slide"><img src="img/truck2.png" alt=""></div>
+                <div class="swiper-slide"><img src="img/tool1.png"  alt=""></div>
+                <div class="swiper-slide"><img src="img/tractor.png"  alt=""></div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+      
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev" style="font-size: small;"></div>
+            <div class="swiper-button-next"></div>
+      
+            <!-- If we need scrollbar -->
+            <!-- <div class="swiper-scrollbar"></div> -->
         </div>
-          <br>
-          <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span> 
-            <span class="dot" onclick="currentSlide(2)"></span> 
-            <span class="dot" onclick="currentSlide(3)"></span> 
-            <span class="dot" onclick="currentSlide(4)"></span> 
-            <span class="dot" onclick="currentSlide(5)"></span> 
-          </div>
+    
+    
+        <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+        <script>
+    
+    
+            const swiper = new Swiper('.swiper', {
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                
+                },
+             
+              loop: true,
+            
+              // If we need pagination
+              pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+              },
           
-          <script>
-            let slideIndex = 1;
-            showSlides(slideIndex);
-            
-            function plusSlides(n) {
-              showSlides(slideIndex += n);
-            }
-            
-            function currentSlide(n) {
-              showSlides(slideIndex = n);
-            }
-            
-            function showSlides(n) {
-              let i;
-              let slides = document.getElementsByClassName("mySlides");
-              let dots = document.getElementsByClassName("dot");
-              if (n > slides.length) {slideIndex = 1}    
-              if (n < 1) {slideIndex = slides.length}
-              for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
-              }
-              for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-              }
-              slides[slideIndex-1].style.display = "block";  
-              dots[slideIndex-1].className += " active";
-            }
-          </script>
+              // Navigation arrows
+              navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+              },
+          
+                // And if we need scrollbar
+                //   scrollbar: {
+                //     el: '.swiper-scrollbar',
+                //   },
+            });
+        </script>
+    </div>
+
+
     </div>
     <div class="div2">
       <h1 class="hintro">Vehicle Maintenance and Repair from Experts</h1>
       <img class="rb"src="img/serviceT.jpg">
-      <div class="rp"><p>Here at Rugged HD we Specialize in everything from Engine Rebuilds to Simple Brake Jobs, and Everything in Between; for heavyduty trucks and equipment. We do both Mobile Repairs and In Shop Repairs.   
+      <div class="rp"><p>Here at Rugged HD we Specialize in everything from Engine Rebuilds to Simple Brake Jobs, and Everything in Bewteen; for heavyduty trucks and equipment. We do both Mobile Repairs and In Shop Repairs.   
       </p></div>
 
     </div>
